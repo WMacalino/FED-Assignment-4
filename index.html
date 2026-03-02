@@ -3,9 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>RenRubato Productions</title>
 </head>
 <body>
+    <h1>R.R. Prod. Commission Form</h1>
     
+    <form id="userForm" action="https://httpbin.org/post" method="post" novalidate>
+        <div class="input-container">
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" name="first-name"/>
+        </div>
+        
+        <div class="input-container">
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" name="last-name"/>
+        </div>
+
+        <div class="input-container">
+            <label for="artist-name">Artist Name:</label>
+            <input type="text" id="artist-name" name="artist-name" placeholder="--If applicable--"/>
+        </div>
+        
+        <div class="input-container">
+            <label for="email">E-mail:</label>
+            <input type="email" required placeholder="example@email.com"/>
+        </div>
+        
+        <div class="input-container">
+            <label for="project-type">What type of audio do you need?:</label>
+            <select id="project-type" name="project-type">
+                <option value="" disabled selected>--Please choose an option--</option>
+                <option value="full-song">Full Song Production</option>
+                <option value="film-show-score">Film/Show Score</option>
+                <option value="background-music">Background Music (Vlog, Stream, etc.)</option>
+                <option value="podcast-intro-outro">Podcast Intro/Outro</option>
+                <option value="podcast-intro-outro">Other (Please specify under "Additional Information section!)</option>
+            </select>
+        </div>
+
+        <fieldset>
+            <legend>How would you like to handle vocals?</legend>
+            <input type="radio" id="vocals-provided" name="vocals-provided" value="vocals-provided"/>
+            <label for="vocals-provided">I am providing raw/recorded vocals.</label><br/>
+            <input type="radio" id="vocals-live" name="vocals-live" value="vocals-live"/>
+            <label for="vocals-live">I would like to record in studio live.</label><br/>
+            <input type="radio" id="no-vocals" name="no-vocals" value="no-vocals"/>
+            <label for="no-vocals">Instrumental only (No vocals needed).</label>
+        </fieldset>
+
+        <div>
+            <fieldset>
+                <legend>Which elements/genres should this track include? (Select all that apply.)</legend>
+                <input type="checkbox" id="heavy-bass-808s" name="heavy-bass-808s" value="heavy-bass-808s"/>
+                <label for="heavy-bass-808s">Heavy Bass / 808s</label><br/>
+                <input type="checkbox" id="orchestral" name="orchestral" value="orchestral"/>
+                <label for="orchestral">Orchestral</label><br/>
+                <input type="checkbox" id="lofi-chill-keys" name="lofi-chill-keys" value="lofi-chill-keys"/>
+                <label for="lofi-chill-keys">Lo-Fi / Chill Keys</label><br/>
+                <input type="checkbox" id="synthwave-retro" name="synthwave-retro" value="synthwave-retro"/>
+                <label for="synthwave-retro">Synthwave / Retro Elements</label><br/>
+            </fieldset>
+        </div>
+        
+        <div>
+            <label for="promo-code">Promo Code:</label>
+            <input type="text" placeholder="E.g., BEAT-YYYY-ABC"/>
+        </div>
+
+        <div class="input-container">
+            <label for="additional-info">Additional Information:</label><br/>
+            <textarea id="additional-info" name="additional-info" rows="4" placeholder="Any special requests or information you'd like to share?"></textarea>
+        </div>
+
+        <button type="submit">Submit</button>
+
+        </div>
+    </form>
 </body>
 </html>
