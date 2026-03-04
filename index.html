@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-    <h1>R.R. Prod. Feedback Survey</h1>
+    <h1>R.R. Prod. Music Producer/Artist Survey</h1>
     
     <form id="userForm" action="https://httpbin.org/post" method="post" novalidate>
         
@@ -49,7 +49,7 @@
         </div>
 
         <div class="input-container">
-            <fieldset>
+            <fieldset id="vocal-options" >
                 <legend>How do you usually handle vocals in your projects?</legend>
                 <input type="radio" id="vocals-provided" name="vocal-handling" value="vocals-provided"/>
                 <label for="vocals-provided">I record and provide my own vocals.</label><br/>
@@ -65,7 +65,7 @@
         </div>
 
         <div class="input-container">
-            <fieldset>
+            <fieldset id="genre-options">
                 <legend>Which elements/genres are you most interested in producing next? (Select all that apply.)</legend>
                 <input type="checkbox" id="heavy-bass-808s" name="heavy-bass-808s" value="heavy-bass-808s"/>
                 <label for="heavy-bass-808s">Heavy Bass / 808s</label><br/>
@@ -104,5 +104,6 @@
         <button type="submit">Submit Survey</button>
 
     </form>
+    <script src="script.js"></script>
 </body>
 </html>

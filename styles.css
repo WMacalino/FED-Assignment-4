@@ -138,3 +138,19 @@ button:hover {
 button:active {
     transform: scale(0.98);
 }
+
+.error-message {
+    color: #ff4444;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: block;
+}
+
+.input-error {
+    border: 2px solid #cc0000 !important; 
+    background-color: var(--bg-input);
+}
+
+@media only screen and (max-width: 650px) {
+     
+}
