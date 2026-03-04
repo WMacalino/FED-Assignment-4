@@ -1,0 +1,140 @@
+/* --- 1. GLOBAL VARIABLES & RESET --- */
+:root {
+    --bg-main: #121212;       
+    --bg-form: #1e1e1e;
+    --bg-input: #2a2a2a;
+    --text-main: #e0e0e0;
+    --text-muted: #9e9e9e;
+    --accent: #00e5ff;
+    --border: #333333;
+}
+
+body {
+    background-image: linear-gradient(rgba(26, 11, 20, 0.75), rgba(26, 11, 20, 0.75)), 
+                      url('https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXJkdGZ1NXRsajdvYjFmNmRzbXFzczR3MmZ3aWdpamc2eno5NmdhYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2TSYezfbVds1Nge32V/giphy.gif');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--text-main);
+    font-family: 'Source Code Pro', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    margin: 0;
+}
+
+h1 {
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* --- 2. THE FORM CONTAINER --- */
+form {
+    background-color: var(--bg-form);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);
+    width: 100%;
+    max-width: 600px;
+    border-top: 4px solid var(--accent);
+}
+
+/* --- 3. LAYOUT & LABELS --- */
+.input-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-muted);
+}
+
+/* --- 4. INPUTS, SELECTS, & TEXTAREAS --- */
+input[type="text"], 
+input[type="email"], 
+input[type="date"], 
+select, 
+textarea {
+    background-color: var(--bg-input);
+    border: 1px solid var(--border);
+    color: var(--text-main);
+    padding: 12px;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* Hover & Focus states for inputs */
+input:focus, 
+select:focus, 
+textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 8px rgba(0, 229, 255, 0.2);
+}
+
+/* --- 5. FIELDSETS (Radios & Checkboxes) --- */
+fieldset {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+legend {
+    color: var(--accent);
+    font-weight: bold;
+    padding: 0 10px;
+    font-size: 0.95rem;
+}
+
+/* Spacing out the radio/checkbox options */
+fieldset label {
+    color: var(--text-main);
+    font-weight: normal;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+fieldset input[type="radio"], 
+fieldset input[type="checkbox"] {
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+
+/* --- 6. SUBMIT BUTTON --- */
+button {
+    background-color: var(--accent);
+    color: #000;
+    border: none;
+    padding: 14px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background-color: var(--accent);
+    box-shadow: 0 0 20px rgba(0, 225, 255, 0.897);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: scale(0.98);
+}
