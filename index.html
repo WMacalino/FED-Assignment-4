@@ -7,103 +7,106 @@
     <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-    <h1>R.R. Prod. Music Producer/Artist Survey</h1>
+    <main>
+        <h1>R.R. Prod. Music Producer/Artist Survey</h1>
+        
+        <form id="userForm" action="https://httpbin.org/post" method="post" novalidate>
+            
+            <div class="input-container">
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" name="first-name"/>
+                <span id="first-name-error" class="error-message"></span>
+            </div>
+            
+            <div class="input-container">
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" name="last-name"/>
+                <span id="last-name-error" class="error-message"></span>
+            </div>
+
+            <div class="input-container">
+                <label for="artist-name">Artist Name:</label>
+                <input type="text" id="artist-name" name="artist-name" placeholder="--If applicable--"/>
+                <span id="artist-name-error" class="error-message"></span>
+            </div>
+            
+            <div class="input-container">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="example@email.com" required/>
+                <span id="email-error" class="error-message"></span>
+            </div>
+            
+            <div class="input-container">
+                <label for="project-type">What type of audio project do you mostly work on?</label>
+                <select id="project-type" name="project-type">
+                    <option value="" disabled selected>--Please choose an option--</option>
+                    <option value="full-song">Full Song Production</option>
+                    <option value="film-show-score">Film/Show Score</option>
+                    <option value="background-music">Background Music (Vlog, Stream, etc.)</option>
+                    <option value="podcast-intro-outro">Podcast Intro/Outro</option>
+                    <option value="other">Other</option>
+                </select>
+                <span id="project-type-error" class="error-message"></span>
+            </div>
+
+            <div class="input-container">
+                <fieldset id="vocal-options" >
+                    <legend>How do you usually handle vocals in your projects?</legend>
+                    <input type="radio" id="vocals-provided" name="vocal-handling" value="vocals-provided"/>
+                    <label for="vocals-provided">I record and provide my own vocals.</label><br/>
+                    
+                    <input type="radio" id="vocals-live" name="vocal-handling" value="vocals-live"/>
+                    <label for="vocals-live">I prefer to record live in a studio.</label><br/>
+                    
+                    <input type="radio" id="no-vocals" name="vocal-handling" value="no-vocals"/>
+                    <label for="no-vocals">I strictly make/use instrumental music.</label>
+                    
+                    <br/><span id="vocal-handling-error" class="error-message"></span>
+                </fieldset>
+            </div>
+
+            <div class="input-container">
+                <fieldset id="genre-options">
+                    <legend>Which elements/genres are you most interested in producing next? (Select all that apply.)</legend>
+                    <input type="checkbox" id="heavy-bass-808s" name="heavy-bass-808s" value="heavy-bass-808s"/>
+                    <label for="heavy-bass-808s">Heavy Bass / 808s</label><br/>
+                    
+                    <input type="checkbox" id="orchestral" name="orchestral" value="orchestral"/>
+                    <label for="orchestral">Orchestral</label><br/>
+                    
+                    <input type="checkbox" id="lofi-chill-keys" name="lofi-chill-keys" value="lofi-chill-keys"/>
+                    <label for="lofi-chill-keys">Lo-Fi / Chill Keys</label><br/>
+                    
+                    <input type="checkbox" id="synthwave-retro" name="synthwave-retro" value="synthwave-retro"/>
+                    <label for="synthwave-retro">Synthwave / Retro Elements</label><br/>
+                    
+                    <br/><span id="genres-error" class="error-message"></span>
+                </fieldset>
+            </div>
+            
+            <div class="input-container">
+                <label for="target-date">When did you start producing/making music?</label>
+                <input type="date" id="target-date" name="target-date"/>
+                <span id="target-date-error" class="error-message"></span>
+            </div>
+
+            <div class="input-container">
+                <label for="promo-code">Survey Invitation Code (If provided):</label>
+                <input type="text" id="promo-code" name="promo-code" pattern="^BEAT-\d{4}-[A-Z]{3}$" title="Format: BEAT-YYYY-ABC" placeholder="E.g., BEAT-2026-ABC"/>
+                <span id="promo-code-error" class="error-message"></span>
+            </div>
+
+            <div class="input-container">
+                <label for="additional-info">Additional Feedback:</label><br/>
+                <textarea id="additional-info" name="additional-info" rows="4" placeholder="What kind of audio tools or tutorials would you like to see from us?"></textarea>
+                <span id="additional-info-error" class="error-message"></span>
+            </div>
+
+            <button type="submit">Submit Survey</button>
+
+        </form>
+    </main>
     
-    <form id="userForm" action="https://httpbin.org/post" method="post" novalidate>
-        
-        <div class="input-container">
-            <label for="first-name">First Name:</label>
-            <input type="text" id="first-name" name="first-name"/>
-            <span id="first-name-error" class="error-message"></span>
-        </div>
-        
-        <div class="input-container">
-            <label for="last-name">Last Name:</label>
-            <input type="text" id="last-name" name="last-name"/>
-            <span id="last-name-error" class="error-message"></span>
-        </div>
-
-        <div class="input-container">
-            <label for="artist-name">Artist Name:</label>
-            <input type="text" id="artist-name" name="artist-name" placeholder="--If applicable--"/>
-            <span id="artist-name-error" class="error-message"></span>
-        </div>
-        
-        <div class="input-container">
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" placeholder="example@email.com" required/>
-            <span id="email-error" class="error-message"></span>
-        </div>
-        
-        <div class="input-container">
-            <label for="project-type">What type of audio project do you mostly work on?</label>
-            <select id="project-type" name="project-type">
-                <option value="" disabled selected>--Please choose an option--</option>
-                <option value="full-song">Full Song Production</option>
-                <option value="film-show-score">Film/Show Score</option>
-                <option value="background-music">Background Music (Vlog, Stream, etc.)</option>
-                <option value="podcast-intro-outro">Podcast Intro/Outro</option>
-                <option value="other">Other</option>
-            </select>
-            <span id="project-type-error" class="error-message"></span>
-        </div>
-
-        <div class="input-container">
-            <fieldset id="vocal-options" >
-                <legend>How do you usually handle vocals in your projects?</legend>
-                <input type="radio" id="vocals-provided" name="vocal-handling" value="vocals-provided"/>
-                <label for="vocals-provided">I record and provide my own vocals.</label><br/>
-                
-                <input type="radio" id="vocals-live" name="vocal-handling" value="vocals-live"/>
-                <label for="vocals-live">I prefer to record live in a studio.</label><br/>
-                
-                <input type="radio" id="no-vocals" name="vocal-handling" value="no-vocals"/>
-                <label for="no-vocals">I strictly make/use instrumental music.</label>
-                
-                <br/><span id="vocal-handling-error" class="error-message"></span>
-            </fieldset>
-        </div>
-
-        <div class="input-container">
-            <fieldset id="genre-options">
-                <legend>Which elements/genres are you most interested in producing next? (Select all that apply.)</legend>
-                <input type="checkbox" id="heavy-bass-808s" name="heavy-bass-808s" value="heavy-bass-808s"/>
-                <label for="heavy-bass-808s">Heavy Bass / 808s</label><br/>
-                
-                <input type="checkbox" id="orchestral" name="orchestral" value="orchestral"/>
-                <label for="orchestral">Orchestral</label><br/>
-                
-                <input type="checkbox" id="lofi-chill-keys" name="lofi-chill-keys" value="lofi-chill-keys"/>
-                <label for="lofi-chill-keys">Lo-Fi / Chill Keys</label><br/>
-                
-                <input type="checkbox" id="synthwave-retro" name="synthwave-retro" value="synthwave-retro"/>
-                <label for="synthwave-retro">Synthwave / Retro Elements</label><br/>
-                
-                <br/><span id="genres-error" class="error-message"></span>
-            </fieldset>
-        </div>
-        
-        <div class="input-container">
-            <label for="target-date">When did you start producing/making music?</label>
-            <input type="date" id="target-date" name="target-date"/>
-            <span id="target-date-error" class="error-message"></span>
-        </div>
-
-        <div class="input-container">
-            <label for="promo-code">Survey Invitation Code (If provided):</label>
-            <input type="text" id="promo-code" name="promo-code" pattern="^BEAT-\d{4}-[A-Z]{3}$" title="Format: BEAT-YYYY-ABC" placeholder="E.g., BEAT-2026-ABC"/>
-            <span id="promo-code-error" class="error-message"></span>
-        </div>
-
-        <div class="input-container">
-            <label for="additional-info">Additional Feedback:</label><br/>
-            <textarea id="additional-info" name="additional-info" rows="4" placeholder="What kind of audio tools or tutorials would you like to see from us?"></textarea>
-            <span id="additional-info-error" class="error-message"></span>
-        </div>
-
-        <button type="submit">Submit Survey</button>
-
-    </form>
     <script src="script.js"></script>
 </body>
 </html>
