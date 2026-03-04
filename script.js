@@ -24,6 +24,23 @@ form.addEventListener('submit', function(event){
     }
 });
 
+form.addEventListener('input', function(event) {
+    const activeInput = event.target;
+
+    if (activeInput.classList.contains('input-error')) {
+        activeInput.classList.remove('input-error');
+    }
+
+    const container = activeInput.closest('.input-container');
+
+    if (container) {
+        const errorMessage = container.querySelector('.error-message');
+        if (errorMessage) {
+            errorMessage.remove();
+        }
+    }
+});
+
 function displayError(inputElement, message) {
     inputElement.classList.add('input-error');
 
