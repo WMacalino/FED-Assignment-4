@@ -9,6 +9,13 @@
     --border: #333333;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
 body {
     background-image: linear-gradient(rgba(26, 11, 20, 0.75), rgba(26, 11, 20, 0.75)), 
                       url('https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXJkdGZ1NXRsajdvYjFmNmRzbXFzczR3MmZ3aWdpamc2eno5NmdhYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2TSYezfbVds1Nge32V/giphy.gif');

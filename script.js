@@ -36,7 +36,7 @@ form.addEventListener('input', function(event) {
     if (container) {
         const errorMessage = container.querySelector('.error-message');
         if (errorMessage) {
-            errorMessage.remove();
+            errorMessage.textContent = '';
         }
     }
 });
