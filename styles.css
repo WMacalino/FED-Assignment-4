@@ -89,7 +89,7 @@ textarea:focus {
     box-shadow: 0 0 8px rgba(0, 229, 255, 0.2);
 }
 
-/* --- 5. FIELDSETS (Radios & Checkboxes) --- */
+/* --- 5. FIELDSETS (Custom Radios & Checkboxes) --- */
 fieldset {
     border: 1px solid var(--border);
     border-radius: 6px;
@@ -105,18 +105,76 @@ legend {
     font-size: 0.95rem;
 }
 
-/* Spacing out the radio/checkbox options */
 fieldset label {
     color: var(--text-main);
     font-weight: normal;
     cursor: pointer;
-    margin-left: 8px;
+    margin-left: 6px;
+    vertical-align: middle;
 }
 
+/* ERASE THE DEFAULT STYLES AND BUILD THE BASE */
 fieldset input[type="radio"], 
 fieldset input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none; /* Safari support */
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border);
+    background-color: var(--bg-input);
+    display: inline-block;
+    vertical-align: middle;
     margin-bottom: 12px;
     cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* MAKE RADIOS ROUND, KEEP CHECKBOXES SQUARE */
+fieldset input[type="radio"] {
+    border-radius: 50%;
+}
+fieldset input[type="checkbox"] {
+    border-radius: 4px;
+}
+
+/* HOVER EFFECTS (Neon Glow) */
+fieldset input[type="radio"]:hover, 
+fieldset input[type="checkbox"]:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 8px rgba(0, 229, 255, 0.2);
+}
+
+/* CHECKED STATE (Border Color Change) */
+fieldset input[type="radio"]:checked, 
+fieldset input[type="checkbox"]:checked {
+    border-color: var(--accent);
+}
+
+/* THE MAGIC: ADDING THE DOT AND CHECKMARK INSIDE */
+fieldset input[type="radio"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    box-shadow: 0 0 8px var(--accent);
+}
+
+fieldset input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--accent);
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 0 0 8px var(--accent);
 }
 
 /* --- 6. SUBMIT BUTTON --- */
@@ -159,5 +217,17 @@ button:active {
 }
 
 @media only screen and (max-width: 650px) {
-     
+    body {
+        padding: 1rem;
+    }
+    form {
+        padding: 1.5rem;
+    }
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    button {
+        padding: 16px 20px;
+    }
 }
